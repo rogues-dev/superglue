@@ -1,0 +1,28 @@
+= SuperGlue Template Project
+
+You have just created a new Android Project based off of the SuperGlue Template!
+
+
+Do an initial commit before compilation so that gradle can get the git sha and last commit
+time.
+
+
+== Project Structure
+```
+ <project>
+    |
+    +-gradle
+    |   |
+    |   +- custom gradle scrips, see signing.gradle for values to pass in for signing release builds
+    |
+    +---src
+         |
+         +- place source code here
+```
+
+Run update plugin** to see if any libraries need updating
+Run checkStyles** to see if all your code matches the laid out style guide
+
+internal packages are for usage internally and will have a debug drawer available
+production is for giving to people for testing and productionRelease is releaing to the play store
+the `{yourPackage}.ui.example` package can be removed as it's just there as an example.

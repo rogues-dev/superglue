@@ -1,0 +1,3 @@
+ext.keystorePassword = project.hasProperty('superglue.keystorePassword') ? project.getProperty('superglue.keystorePassword') : System.getenv('SUPERGLUE_KEYSTORE_PASSWORD') ?: ''
+ext.keystoreAlias = project.hasProperty('superglue.keystoreAlias') ? project.getProperty('superglue.keystoreAlias') : System.getenv('SUPERGLUE_KEYSTORE_ALIAS') ?: ''
+ext.keystoreAliasPassword = project.hasProperty('superglue.keystoreAliasPassword') ? project.getProperty('superglue.keystoreAliasPassword') : System.getenv('SUPERGLUE_KEYSTORE_ALIAS_PASSWORD') ?: ''

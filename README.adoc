@@ -1,0 +1,85 @@
+= Super Glue
+
+== Bootstrap for your Android Projects
+
+Get your application off the ground with this lazybones template. This template contains everything you
+need to start consuming web APIs. This template is highly based off of Jake Wharton's
+[u2020](https://github.com/JakeWharton/u2020) and comes with a debug drawer and some other great features.
+
+== Getting Started
+
+Requirements: Lazybones 0.7+
+
+Install https://github.com/pledbrook/lazybones[lazybones] using https://sdkman.io/[Sdk Man],
+http://jenv.io/[jenv] or from
+https://bintray.com/pledbrook/lazybones-templates/lazybones/view[lazybones bintray]
+
+Edit/create `~/.lazybones/config.groovy` and add the following.
+
+    bintrayRepositories = [
+      "rogues-dev/lazybones-templates",
+      "pledbrook/lazybones-templates"
+    ]
+
+Run `lazybones list` to see all the available templates.
+Run `lazybones create <template name> <template version> <app name>` to create a new
+project.
+
+To create a new project based off of *SuperGlue* you would run
+`lazybones create superglue my-android-application --with-git`.
+
+Use the `--with-git` flag to initialize the project with git already setup. If you do not do this,
+when you try to build a gradle exception will occur due to a gitsha not being available. Simply
+edit your gradle file to remove the methods `getGitSha` and `getGitTimestamp` if you want to
+use something other than git.
+
+
+== Libraries Included
+
+This project is based off of Jake Wharton's https://github.com/JakeWharton/u2020[U2020] and a
+similar starter project https://github.com/AndrewReitz/velcro[Velcro].
+
+- Dagger 2
+- RxJava
+- Timber
+- RxBinding
+- ThreeTenABP
+- Leak Canary
+- Retrofit
+- Picasso
+
+Internal / Debug Libraries
+
+- Telescope
+- Stetho
+- Madge
+- Scalpel
+
+== Intention
+
+This project is indented to get a real project off the ground and running with little to no
+setup. It was created to stop the repetitive process of copy and pasting code from project to
+project, and remove the burden of setting up Dagger, and settin gup okhttp with retrofit,
+and picasso to utilize cache.
+
+If there is something that you believe is incorrect with this template please open up
+an issue or pull request. If it's not something that should include into this template, that's
+cool, hopefully this template is a good guide (and can be easily forked) to create your own.
+
+== License
+
+----
+Copyright 2017 Rogues Dev
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+----

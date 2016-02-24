@@ -1,0 +1,3 @@
+ext.keystorePassword = project.hasProperty('{{packageName}}.keystorePassword') ? project.getProperty('{{packageName}}.keystorePassword') : System.getenv('{{applicationNameAllCaps}}_KEYSTORE_PASSWORD') ?: ''
+ext.keystoreAlias = project.hasProperty('{{packageName}}.keystoreAlias') ? project.getProperty('{{packageName}}.keystoreAlias') : System.getenv('{{applicationNameAllCaps}}_KEYSTORE_ALIAS') ?: ''
+ext.keystoreAliasPassword = project.hasProperty('{{packageName}}.keystoreAliasPassword') ? project.getProperty('{{packageName}}.keystoreAliasPassword') : System.getenv('{{applicationNameAllCaps}}_KEYSTORE_ALIAS_PASSWORD') ?: ''

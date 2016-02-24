@@ -1,0 +1,48 @@
+ext {
+  /** Folder where the application we are generating the archetype is coming from */
+  appFolder = 'superglue-app'
+
+  /** The resources folder inside the archetype to place the app files */
+  lazybonesFolder = 'superglue-lazybones/src/templates/superglue'
+
+  /** files to be kept when doing a clean. These are setup specific to the archetype */
+  keepFiles = ['lazybones.groovy', '.gitignore']
+
+  /** Files with these extensions have values that should be replaced with archetype variable */
+  filterExtensions = ['.xml', '.java', '.md', '.gradle']
+}
+
+allprojects {
+  version = '0.1.0'
+}
+
+task copyAppToLazyBones(type: Copy) {
+  description = "Copy superglue-app to superglue-lazybones"
+
+  from(appFolder) {
+    eachFile { file ->
+      // Only filter on java, xml, and markdown files. Images become corrupt
+      // if run through filter.
+      if (filterExtensions.find { file.name.toLowerCase().endsWith(it) } ) {
+        filter { filter ->
+          filter.replace('superglue', '{{packageName}}')
+                .replace('SuperGlue', '{{applicationName}}')
+                .replace('superGlue', '{{applicationNameCamelCase}}')
+                .replace('SUPERGLUE', '{{applicationNameAllCaps}}')
+        }
+      }
+    }
+  }
+  into 'superglue-lazybones/src/templates/superglue'
+}
+
+task cleanTemplate(type: Delete) {
+  doFirst {
+    def files = files { file(lazybonesFolder).listFiles() }
+    files.each { File file ->
+      if (!(file.name in keepFiles)) {
+        delete file
+      }
+    }
+  }
+}
