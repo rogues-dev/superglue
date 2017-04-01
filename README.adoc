@@ -69,7 +69,7 @@ cool, hopefully this template is a good guide (and can be easily forked) to crea
 == License
 
 ----
-Copyright 2017 Rogues Dev
+Copyright 2017 Rogue's Dev
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
