@@ -59,8 +59,8 @@ Internal / Debug Libraries
 
 This project is indented to get a real project off the ground and running with little to no
 setup. It was created to stop the repetitive process of copy and pasting code from project to
-project, and remove the burden of setting up Dagger, and settin gup okhttp with retrofit,
-and picasso to utilize cache.
+project, remove the burden of setting up Dagger, and setting up okhttp with retrofit,
+and picasso to utilize a cache.
 
 If there is something that you believe is incorrect with this template please open up
 an issue or pull request. If it's not something that should include into this template, that's
