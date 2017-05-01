@@ -20,10 +20,6 @@ public final class ApiModule {
     return PRODUCTION_API_URL;
   }
 
-  //@Provides @Singleton @Named("Api") OkHttpClient provideApiClient(OkHttpClient client) {
-  //  return createApiClient(client).build();
-  //}
-
   @Provides @Singleton Retrofit provideRetrofit(HttpUrl baseUrl, @Named("Api") OkHttpClient client,
       Moshi moshi) {
     return new Retrofit.Builder() //
