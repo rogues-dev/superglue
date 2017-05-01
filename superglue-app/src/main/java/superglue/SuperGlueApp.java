@@ -2,6 +2,7 @@ package superglue;
 
 import android.app.Application;
 import android.support.annotation.NonNull;
+import com.jakewharton.processphoenix.ProcessPhoenix;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 import superglue.data.Injector;
 import superglue.data.LumberYard;
@@ -19,8 +20,11 @@ public class SuperGlueApp extends Application {
 
   @Override public void onCreate() {
     super.onCreate();
-    AndroidThreeTen.init(this);
+    if (LeakCanary.isInAnalyzerProcess(this) || ProcessPhoenix.isPhoenixProcess(this)) {
+      return;
+    }
     LeakCanary.install(this);
+    AndroidThreeTen.init(this);
 
     component = DaggerInitializer.init(this);
     component.inject(this);
