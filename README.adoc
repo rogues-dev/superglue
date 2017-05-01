@@ -1,10 +1,12 @@
 = Super Glue
 
+image::super-glue-logo.svg[Logo,200,300]
+
 == Bootstrap for your Android Projects
 
 Get your application off the ground with this lazybones template. This template contains everything you
 need to start consuming web APIs. This template is highly based off of Jake Wharton's
-[u2020](https://github.com/JakeWharton/u2020) and comes with a debug drawer and some other great features.
+https://github.com/JakeWharton/u2020[u2020] and comes with a debug drawer and some other great features.
 
 == Getting Started
 
